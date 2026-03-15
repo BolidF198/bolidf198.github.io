@@ -15,8 +15,51 @@
     <p><a href="https://bolidf198.github.io/media-expert/">Zrobilem w 10 minut na informatyce bo mi się nudziło na scratchu :)</a></p>
     <p><a href="https://bolidf198.github.io/chemia/">to zrobiłem na chemii bo było nudno i była wolna lekcja XD</a></p>
     <button onclick ="alert('F1, WRC, Sport, Auta i Technologia')">Moje Zainteresowania</button>
-    <img src="https://i.pinimg.com/736x/83/22/5b/83225b3dad64f130fb4fe8f5130b774f.jpg" alt="Obrazek z Pinterest" style="max-width:100%;height:auto;">
-    <img src="https://www.mediaexpert.pl/media/cache/resolve/filemanager_original/images/zz_akcje_marketingowe/mediaexpert/rabatoszal/zima_i_30_rat_0proc_i_do_kwietnia_nie_placisz/slider_SG%5BD%5D_1480_100kB.jpg" alt="zima i 30 rat 0 % i do kwietnia nie płacisz!">
+     <img src="logo.png" id="logo">
+
+    <script>
+        const logo = document.getElementById("logo");
+        
+        let x = 10;
+        let y = 10;
+        let dx = 3;
+        let dy = 3;
+
+        function move() {
+            x += dx;
+            y += dy;
+
+            // Sprawdzanie kolizji z prawą i lewą krawędzią
+            // offsetWidth pobiera realną szerokość obrazka wyświetlaną na ekranie
+            if (x + logo.offsetWidth >= window.innerWidth || x <= 0) {
+                dx = -dx;
+                changeColor();
+            }
+
+            // Sprawdzanie kolizji z górną i dolną krawędzią
+            if (y + logo.offsetHeight >= window.innerHeight || y <= 0) {
+                dy = -dy;
+                changeColor();
+            }
+
+            logo.style.left = x + "px";
+            logo.style.top = y + "px";
+        }
+
+        function changeColor() {
+            // Generuje losowy kolor tła w formacie HSL
+            document.body.style.background = `hsl(${Math.random() * 360}, 70%, 50%)`;
+        }
+
+        // Odświeżanie co 10ms (100 klatek na sekundę)
+        setInterval(move, 10);
+
+        // Opcjonalne: dopasowanie pozycji przy zmianie rozmiaru okna
+        window.onresize = () => {
+            x = 0;
+            y = 0;
+        };
+    </script>
     <img src="https://cms-images.mmst.eu/4lyxhctxrf55/6wgUXtKKlygxSgESR3Va9F/052e3003a4e2f1cdab5baf1c3d840664/zestawomania_desktop_standard_teaser_v2.jpg?q=92&w=890" alt="Zestawomania teaser" width="890" style="max-width:100%;height:auto;">
 </body>
 
