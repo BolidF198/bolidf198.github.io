@@ -1,84 +1,79 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale2.0">
+
     <title>Główna strona huberta</title>
+
 </head>
+
 <body>
+
     <h1>Strona Główna Huberta</h1>
+    
     <p>Moje projekty:</p>
-    <iframe src="https://bolidf198.github.io/temu-z-gadu-gadu/" width="480" height="410" style="border:none;"></iframe>
-    <iframe src="https://bolidf198.github.io" width="480" height="410" style="border:none;"></iframe>
-    <img src="clicker.png" onclick="window.location.href='https://bolidf198.github.io/cookie-clicker-z-temu/'" style="cursor:pointer;">
-    <img src="plan-lekcji.png" onclick="window.location.href='https://bolidf198.github.io/Plan-Lekcji'" style="cursor:pointer;">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnisZ7flWP4xtTi2mh-1e0BvS__GpujNtKmmxwldeqp0yjU23jGPn9cZd6KdAwLEfMh6q9d3JsHg1RKkB45BqgsRnekCwBDwHTnRu5nKSa&s=10" onclick="window.location.href='https://bolidf198.github.io/wapierz-dvd/'" style="cursor:pointer;">
- <style>
+
+    <p><a href="https://bolidf198.github.io">Strona z wszystkimi moimi stronami</a></p>
+
+
+    <p><a href="https://bolidf198.github.io/Plan-Lekcji/">Plan Lekcji (najnowszy projekt) </a></p>
+
+
+    <p><a href="https://bolidf198.github.io/Plan-Lekcji/">Komunikator (działa:D)(najnowszy projekt) </a></p>
+
+    <p><a href="bolidf198.github.io/cookie-clicker-z-temu">clicker</a></p>
+    
+    <p><a href="https://bolidf198.github.io/Plan-Lekcji/">Plan Lekcji</a></p>
+
+    <p><a href="https://bolidf198.github.io/wapierz-dvd/">Papież dvd</a></p>
+
+    <p><a href="https://bolidf198.github.io/media-expert/">Zrobilem w 10 minut na informatyce bo mi się nudziło na scratchu :)</a></p>
+
+    <p><a href="https://bolidf198.github.io/chemia/">to zrobiłem na chemii bo było nudno i była wolna lekcja XD</a></p>
+
+    <button onclick ="alert('F1, WRC, Sport, Auta i Technologia')">Moje Zainteresowania</button>
+
+    <style>
+
         img {
+
             position: absolute;
+
             /* Tutaj kontroluj wielkość obrazka */
+
             width: 150px; 
+
             height: auto;
+
             cursor: pointer;
+
         }
+
+
 
         button {
+
             position: absolute;
+
             z-index: 10;
+
             top: 10px;
+
             left: 10px;
+
             padding: 10px;
+
             cursor: pointer;
+
         }
+
     </style>
+
 </head>
-
-    <img src="logo.png" id="logo">
-
-    <script>
-        const logo = document.getElementById("logo");
-        
-        let x = 10;
-        let y = 10;
-        let dx = 3;
-        let dy = 3;
-
-        function move() {
-            x += dx;
-            y += dy;
-
-            // Sprawdzanie kolizji z prawą i lewą krawędzią
-            // offsetWidth pobiera realną szerokość obrazka wyświetlaną na ekranie
-            if (x + logo.offsetWidth >= window.innerWidth || x <= 0) {
-                dx = -dx;
-                changeColor();
-            }
-
-            // Sprawdzanie kolizji z górną i dolną krawędzią
-            if (y + logo.offsetHeight >= window.innerHeight || y <= 0) {
-                dy = -dy;
-                changeColor();
-            }
-
-            logo.style.left = x + "px";
-            logo.style.top = y + "px";
-        }
-
-        // Odświeżanie co 10ms (100 klatek na sekundę)
-        setInterval(move, 10);
-
-        // Opcjonalne: dopasowanie pozycji przy zmianie rozmiaru okna
-        window.onresize = () => {
-            x = 0;
-            y = 0;
-        };
-    </script>
-    
-
-</html>
-
-
-
-
 
 
