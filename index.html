@@ -84,92 +84,42 @@
 
     <img src="logo.png" id="logo">
 
+<script>
+  const logo = document.getElementById("logo");
+  let x = 10;
+  let y = 10;
+  let dx = 3;
+  let dy = 3;
 
+  function changeColor() {
+    const colors = ["red", "blue", "green", "yellow", "orange", "pink", "white"];
+    logo.style.filter = `drop-shadow(0 0 8px ${colors[Math.floor(Math.random() * colors.length)]})`;
+  }
 
-    <script>
+  function move() {
+    x += dx;
+    y += dy;
 
-        const logo = document.getElementById("logo");
+    if (x + logo.offsetWidth >= window.innerWidth || x <= 0) {
+      dx = -dx;
+      changeColor();
+    }
+    if (y + logo.offsetHeight >= window.innerHeight || y <= 0) {
+      dy = -dy;
+      changeColor();
+    }
 
+    logo.style.left = x + "px";
+    logo.style.top = y + "px";
+  }
 
+  setInterval(move, 10);
 
-        let x = 10;
-
-        let y = 10;
-
-        let dx = 3;
-
-        let dy = 3;
-
-
-
-        function move() {
-
-            x += dx;
-
-            y += dy;
-
-
-
-            // Sprawdzanie kolizji z prawą i lewą krawędzią
-
-            // offsetWidth pobiera realną szerokość obrazka wyświetlaną na ekranie
-
-            if (x + logo.offsetWidth >= window.innerWidth || x <= 0) {
-
-                dx = -dx;
-
-                changeColor();
-
-            }
-
-
-
-            // Sprawdzanie kolizji z górną i dolną krawędzią
-
-            if (y + logo.offsetHeight >= window.innerHeight || y <= 0) {
-
-                dy = -dy;
-
-                changeColor();
-
-            }
-
-
-
-            logo.style.left = x + "px";
-
-            logo.style.top = y + "px";
-
-        }
-
-
-
-        // Odświeżanie co 10ms (100 klatek na sekundę)
-
-        setInterval(move, 10);
-
-
-
-        // Opcjonalne: dopasowanie pozycji przy zmianie rozmiaru okna
-
-        window.onresize = () => {
-
-            x = 0;
-
-            y = 0;
-
-        };
-
-    </script>
-
-    <img src="https://cms-images.mmst.eu/4lyxhctxrf55/6wgUXtKKlygxSgESR3Va9F/052e3003a4e2f1cdab5baf1c3d840664/zestawomania_desktop_standard_teaser_v2.jpg?q=92&w=890" alt="Zestawomania teaser" width="890" style="max-width:100%;height:auto;">
+  window.onresize = () => {
+    x = 0;
+    y = 0;
+  };
+</script>
 
 </body>
-
-
-
-
-
-</head>
-
-
+</html>
