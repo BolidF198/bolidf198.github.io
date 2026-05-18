@@ -36,90 +36,30 @@
     <p><a href="https://bolidf198.github.io/chemia/">to zrobiłem na chemii bo było nudno i była wolna lekcja XD</a></p>
 
 
-    <button onclick ="alert('F1, WRC, Sport, Auta i Technologia')">Moje Zainteresowania</button>
-
-
-    <style>
-
-
- <style>
-
-        img {
-
-            position: absolute;
-
-            /* Tutaj kontroluj wielkość obrazka */
-
-            width: 150px; 
-
-            height: auto;
-
-            cursor: pointer;
-
-        }
-
-
-
-        button {
-
-            position: absolute;
-
-            z-index: 10;
-
-            top: 10px;
-
-            left: 10px;
-
-            padding: 10px;
-
-            cursor: pointer;
-
-        }
-
-    </style>
-
-</head>
-
-
+    <button onclick="alert('F1, WRC, Sport, Auta i Technologia')">Moje Zainteresowania</button>
 
     <img src="logo.png" id="logo">
 
-<script>
-  const logo = document.getElementById("logo");
-  let x = 10;
-  let y = 10;
-  let dx = 3;
-  let dy = 3;
+    <script>
+        const logo = document.getElementById("logo");
+        let x = 10, y = 10, dx = 3, dy = 3;
 
-  function changeColor() {
-    const colors = ["red", "blue", "green", "yellow", "orange", "pink", "white"];
-    logo.style.filter = `drop-shadow(0 0 8px ${colors[Math.floor(Math.random() * colors.length)]})`;
-  }
+        function changeColor() {
+            const colors = ["red", "blue", "green", "yellow", "orange", "pink", "white"];
+            logo.style.filter = `drop-shadow(0 0 8px ${colors[Math.floor(Math.random() * colors.length)]})`;
+        }
 
-  function move() {
-    x += dx;
-    y += dy;
+        function move() {
+            x += dx;
+            y += dy;
+            if (x + logo.offsetWidth >= window.innerWidth || x <= 0) { dx = -dx; changeColor(); }
+            if (y + logo.offsetHeight >= window.innerHeight || y <= 0) { dy = -dy; changeColor(); }
+            logo.style.left = x + "px";
+            logo.style.top = y + "px";
+        }
 
-    if (x + logo.offsetWidth >= window.innerWidth || x <= 0) {
-      dx = -dx;
-      changeColor();
-    }
-    if (y + logo.offsetHeight >= window.innerHeight || y <= 0) {
-      dy = -dy;
-      changeColor();
-    }
-
-    logo.style.left = x + "px";
-    logo.style.top = y + "px";
-  }
-
-  setInterval(move, 10);
-
-  window.onresize = () => {
-    x = 0;
-    y = 0;
-  };
-</script>
-
+        setInterval(move, 10);
+        window.onresize = () => { x = 0; y = 0; };
+    </script>
 </body>
 </html>
