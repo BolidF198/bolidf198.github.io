@@ -45,12 +45,39 @@
 
     <p><a href="https://bolidf198.github.io/chemia/">to zrobiłem na chemii bo było nudno i była wolna lekcja XD</a></p>
 
-
+    <p id="licznik wejsc od 5.06.2026 od godz 10:31"></p>
+    
     <button onclick="alert('F1, WRC, Sport, Auta i Technologia')">Moje Zainteresowania</button>
 
     <img src="logo.png" id="logo">
 
-    <script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+    getDatabase,
+    ref,
+    set,
+    onValue
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+        const firebaseConfig = {
+  apiKey: "AIzaSyDG7PG9NsNEwr80R6GCIA4ezwSmpWqv_Ko",
+  authDomain: "licznik-wejsc2137.firebaseapp.com",
+  databaseURL: "https://licznik-wejsc2137-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "licznik-wejsc2137",
+  storageBucket: "licznik-wejsc2137.firebasestorage.app",
+  messagingSenderId: "787001902837",
+  appId: "1:787001902837:web:1f7ab81f6b550185e1e7bc"
+};
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+        const licznikRef = ref(db, "wizyty");
+onValue(licznikRef, (snapshot) => {
+    const aktualna = snapshot.val() || 0;
+    set(licznikRef, aktualna + 1);
+    document.getElementById("licznik").textContent = "Odwiedziny: " + (aktualna + 1);
+});
+    </script>
+        <script>
         const logo = document.getElementById("logo");
         let x = 10, y = 10, dx = 3, dy = 3;
 
