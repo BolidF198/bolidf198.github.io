@@ -73,7 +73,7 @@ import {
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
         const licznikRef = ref(db, "wizyty");
-onValue(licznikRef, (snapshot) => {
+get(licznikRef,.then((snapshot) => {
     const aktualna = snapshot.val() || 0;
     set(licznikRef, aktualna + 1);
     document.getElementById("licznik").textContent = "Odwiedziny: " + (aktualna + 1);
