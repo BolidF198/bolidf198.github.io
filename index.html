@@ -59,7 +59,7 @@ import {
     getDatabase,
     ref,
     set,
-    onValue
+    get
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
         const firebaseConfig = {
   apiKey: "AIzaSyDG7PG9NsNEwr80R6GCIA4ezwSmpWqv_Ko",
@@ -73,7 +73,7 @@ import {
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
         const licznikRef = ref(db, "wizyty");
-get(licznikRef.then((snapshot) => {
+get(licznikRef).then((snapshot) => {
     const aktualna = snapshot.val() || 0;
     set(licznikRef, aktualna + 1);
     document.getElementById("licznik").textContent = "Odwiedziny: " + (aktualna + 1);
