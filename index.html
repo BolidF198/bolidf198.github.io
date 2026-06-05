@@ -80,6 +80,18 @@ get(licznikRef).then((snapshot) => {
 });
     </script>
         <script>
+        let spacje = 0;
+        document.addEventListener("keydown", function(e) {
+    if (e.key === " ") {
+        spacje++;
+        if (spacje >= 2) {
+            document.getElementById("splash").style.display = "none";
+        }
+    }
+});
+document.addEventListener("touchstart", function() {
+    document.getElementById("splash").style.display = "none";
+});
         const logo = document.getElementById("logo");
         let x = 10, y = 10, dx = 3, dy = 3;
 
