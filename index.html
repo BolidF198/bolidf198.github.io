@@ -96,11 +96,13 @@ get(licznikRef).then((snapshot) => {
         spacje++;
         if (spacje >= 2) {
             document.getElementById("splash").style.display = "none";
+            new Audio("home.mp3").play();
         }
     }
 });
 document.addEventListener("touchstart", function() {
     document.getElementById("splash").style.display = "none";
+    new Audio("home.mp3").play();
 });
         const logo = document.getElementById("logo");
         let x = 10, y = 10, dx = 3, dy = 3;
