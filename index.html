@@ -151,14 +151,16 @@ easter.addEventListener("input", function() {
     }
 });
         let spacje = 0;
-        document.addEventListener("keydown", function(e) {
-    if (e.key === "k") {
-        spacje++;
-        if (spacje >= 2) {
-            document.getElementById("splash").style.display = "none";
-            const muzyka = new Audio("home.mp3");
-muzyka.loop = true;
-muzyka.play();
+       document.addEventListener("keydown", function(e) {
+    if (document.getElementById("splash").style.display !== "none") {
+        if (e.key === "k") {
+            spacje++;
+            if (spacje >= 2) {
+                document.getElementById("splash").style.display = "none";
+                const muzyka = new Audio("home.mp3");
+                muzyka.loop = true;
+                muzyka.play();
+            }
         }
     }
 });
