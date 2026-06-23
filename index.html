@@ -55,26 +55,13 @@
     <p><a href="https://bolidf198.github.io/media-expert/">Zrobilem w 10 minut na informatyce bo mi się nudziło na scratchu :)</a></p>
 
     <p><a href="https://bolidf198.github.io/chemia/">to zrobiłem na chemii bo było nudno i była wolna lekcja XD</a></p>
-
-    <h1>EASTER EGGI</h1>
-    <input id="easter" maxlength="4" placeholder="????">
-    
+ 
     <p>licznik wejsc od 05.06.2026 od godziny 10:37</p>
     <p id="licznik"></p>
 
     <button onclick="alert('F1, WRC, Sport, Auta i Technologia')">Moje Zainteresowania</button>
 
-    <img id="ee-img-1" src="ee-img-1.png" style="display:none">
-    <img id="ee-img-2" src="ee-img-2.png" style="display:none">
-    <img id="ee-img-3" src="ee-img-3.png" style="display:none">
-    <img id="ee-img-4" src="ee-img-4.png" style="display:none">
-    <img id="ee-img-5" src="ee-img-5.png" style="display:none">
-    <img id="ee-img-6" src="ee-img-6.png" style="display:none">
-    <img id="ee-img-7" src="ee-img-7.png" style="display:none">
-    <img id="ee-img-8" src="ee-img-8.png" style="display:none">
-    <img id="ee-img-9" src="ee-img-9.png" style="display:none">
-    <img src="logo.png" id="logo">
-    <script type="module">
+    
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
     getDatabase,
@@ -101,53 +88,7 @@ get(licznikRef).then((snapshot) => {
 });
     </script>
         <script>
-            const easter = document.getElementById("easter");
-easter.addEventListener("input", function() {
-    if (easter.value === "2602") {
-        if (Math.random() < 0.5) { document.getElementById("ee-img-1").style.display = "block"; }
-        else { window.location.href = "https://bolidf198.github.io/"; }
-        easter.value = "";
-    }
-    if (easter.value === "neal") {
-        if (Math.random() < 0.5) { document.getElementById("ee-img-2").style.display = "block"; }
-        else { window.location.href = "https://neal.fun/"; }
-        easter.value = "";
-    }
-    if (easter.value === "3070") {
-        if (Math.random() < 0.5) { document.getElementById("ee-img-3").style.display = "block"; }
-        else { window.location.href = "https://www.amd.com/en.html"; }
-        easter.value = "";
-    }
-    if (easter.value === "2b2t") {
-        if (Math.random() < 0.5) { document.getElementById("ee-img-4").style.display = "block"; }
-        else { window.location.href = "https://www.2b2t.org/"; }
-        easter.value = "";
-    }
-    if (easter.value === "f1f1") {
-        if (Math.random() < 0.5) { document.getElementById("ee-img-5").style.display = "block"; }
-        else { window.location.href = "https://www.formula1.com/"; }
-        easter.value = "";
-    }
-    if (easter.value === "delt") {
-        if (Math.random() < 0.5) { document.getElementById("ee-img-6").style.display = "block"; }
-        else { window.location.href = "https://deltarune.com/"; }
-        easter.value = "";
-    }
-    if (easter.value === "lech") {
-        if (Math.random() < 0.5) { document.getElementById("ee-img-7").style.display = "block"; }
-        else { window.location.href = "https://www.lechpoznan.pl/"; }
-        easter.value = "";
-    }
-    if (easter.value === "Hubi") {
-        if (Math.random() < 0.5) { document.getElementById("ee-img-8").style.display = "block"; }
-        else { window.location.href = "https://www.minecraft.net/pl-pl"; }
-        easter.value = "";
-    }
-    if (easter.value === "graf") {
-        if (Math.random() < 0.5) { document.getElementById("ee-img-9").style.display = "block"; }
-        else { window.location.href = "https://www.geoguessr.com/pl"; }
-        easter.value = "";
-    }
+            
 });
         let spacje = 0;
        document.addEventListener("keydown", function(e) {
